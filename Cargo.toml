@@ -20,7 +20,7 @@ oxideav-container = "0.0"
 oxideav-source = "0.0"
 oxideav-pipeline = "0.0"
 oxideav-pixfmt = "0.0"
-oxideav-audio-filter = { workspace = true, optional = true }
+oxideav-audio-filter = { version = "0.0", optional = true }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 indexmap = { version = "2", features = ["serde"] }
