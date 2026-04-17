@@ -1,25 +1,25 @@
 [package]
 name = "oxideav-job"
-version.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-license.workspace = true
-repository.workspace = true
-authors.workspace = true
+version = "0.0.3"
+edition = "2021"
+rust-version = "1.80"
+license = "MIT"
+repository = "https://github.com/OxideAV/oxideav-job"
+authors = ["Mark Karpeles"]
 description = "JSON-based transcode job graph for oxideav"
 
 readme = "README.md"
-homepage.workspace = true
+homepage = "https://github.com/OxideAV/oxideav-job"
 keywords = ["multimedia", "transcoding", "pipeline", "job", "graph"]
 categories = ["multimedia"]
 
 [dependencies]
-oxideav-core = { workspace = true }
-oxideav-codec = { workspace = true }
-oxideav-container = { workspace = true }
-oxideav-source = { workspace = true }
-oxideav-pipeline = { workspace = true }
-oxideav-pixfmt = { workspace = true }
+oxideav-core = "0.0"
+oxideav-codec = "0.0"
+oxideav-container = "0.0"
+oxideav-source = "0.0"
+oxideav-pipeline = "0.0"
+oxideav-pixfmt = "0.0"
 oxideav-audio-filter = { workspace = true, optional = true }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
@@ -30,4 +30,4 @@ default = ["audio_filter"]
 audio_filter = ["dep:oxideav-audio-filter"]
 
 [dev-dependencies]
-oxideav-basic = { workspace = true }
+oxideav-basic = "0.0"
