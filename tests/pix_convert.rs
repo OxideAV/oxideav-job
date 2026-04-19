@@ -15,7 +15,7 @@
 //! we focus on the schema → DAG → auto-insert plumbing that is specific
 //! to `oxideav-job`.
 
-use oxideav_codec::{CodecRegistry, Decoder, Encoder};
+use oxideav_codec::{CodecInfo, CodecRegistry, Decoder, Encoder};
 use oxideav_core::{
     CodecCapabilities, CodecId, CodecParameters, Error, Frame, MediaType, Packet, PixelFormat,
     Result,
@@ -146,7 +146,11 @@ fn auto_insert_registers_accepted_pixel_formats() {
     // on the registered CodecImplementation.
     let mut reg = CodecRegistry::new();
     let caps = CodecCapabilities::video("fake_vid_sw").with_pixel_format(PixelFormat::Yuv420P);
-    reg.register_encoder_impl(CodecId::new("fake_vid"), caps, make_encoder);
+    reg.register(
+        CodecInfo::new(CodecId::new("fake_vid"))
+            .capabilities(caps)
+            .encoder(make_encoder),
+    );
     let _ = make_decoder; // silence unused-fn warning
 
     let impls = reg.implementations(&CodecId::new("fake_vid"));

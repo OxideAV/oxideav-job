@@ -315,7 +315,7 @@ impl<'a> Executor<'a> {
         let mut file: Box<dyn ReadSeek> = file;
         let ext = ext_from_uri(uri);
         let format = self.containers.probe_input(&mut *file, ext.as_deref())?;
-        self.containers.open_demuxer(&format, file)
+        self.containers.open_demuxer(&format, file, self.codecs)
     }
 
     /// Pipelined counterpart to [`Self::run_output`]. Builds the same
