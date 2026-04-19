@@ -19,7 +19,7 @@ oxideav-codec = "0.1"
 oxideav-container = "0.0"
 oxideav-source = "0.0"
 oxideav-pipeline = "0.0"
-oxideav-pixfmt = "0.0"
+oxideav-pixfmt = "0.1"
 oxideav-audio-filter = { version = "0.0", optional = true }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
